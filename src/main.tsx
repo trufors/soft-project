@@ -2,19 +2,19 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 import { store } from './store';
 import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <ChakraProvider>
-      <Provider store={store}>
-        <BrowserRouter>
+    <HashRouter>
+      <ChakraProvider>
+        <Provider store={store}>
           <App />
-        </BrowserRouter>
-      </Provider>
-    </ChakraProvider>
+        </Provider>
+      </ChakraProvider>
+    </HashRouter>
   </StrictMode>,
 );
